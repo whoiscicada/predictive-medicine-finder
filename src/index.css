@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,31 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .medicine-card {
+    @apply relative overflow-hidden rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md;
+  }
+  
+  .medicine-card-standard {
+    @apply border-medicine-primary/20 bg-gradient-to-br from-white to-medicine-light/50;
+  }
+  
+  .medicine-card-generic {
+    @apply border-medicine-accent/20;
+  }
+
+  .medicine-header {
+    @apply bg-gradient-to-br from-medicine-primary to-medicine-secondary text-white;
+  }
+  
+  .search-container {
+    @apply relative mx-auto max-w-2xl overflow-hidden rounded-full border-2 border-medicine-primary/20 bg-white shadow-lg transition-all focus-within:border-medicine-primary focus-within:shadow-medicine-primary/20;
+  }
+  
+  .pill-icon-bg {
+    @apply rounded-full bg-gradient-to-br from-medicine-primary to-medicine-secondary p-3 text-white shadow-lg;
   }
 }
