@@ -2,9 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Loader2 } from "lucide-react";
+import { Search, Loader2, Camera } from "lucide-react";
 import { fetchSuggestions } from "@/lib/medicationApi";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface MedicationSearchProps {
   onSearch: (medicationName: string) => void;
@@ -115,6 +117,23 @@ const MedicationSearch: React.FC<MedicationSearchProps> = ({ onSearch, isLoading
             )}
             Search
           </Button>
+          
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button 
+                variant="outline" 
+                className="h-12 aspect-square bg-medicine-light border-medicine-primary/20 hover:bg-medicine-light/80"
+                asChild
+              >
+                <Link to="/scanner">
+                  <Camera className="h-5 w-5 text-medicine-primary" />
+                </Link>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Scan prescription</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
 
         {/* Suggestions dropdown */}
