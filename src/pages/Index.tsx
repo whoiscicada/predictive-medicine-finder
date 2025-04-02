@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { fetchRecommendations } from "@/lib/medicationApi";
 import MedicationSearch from "@/components/MedicationSearch";
 import MedicationCard from "@/components/MedicationCard";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { MedicationRecommendation } from "@/types/medications";
 import { Pill, Loader2 } from "lucide-react";
 
@@ -21,6 +22,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-medicine-background">
+      <BackgroundAnimation />
       <div className="container py-8 px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
